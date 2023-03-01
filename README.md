@@ -281,7 +281,8 @@ trait Program[>-->[-_, +_], &&[+_, +_], ||[+_, +_]]
 
 ## Conclusion
 
-We have defined all `trait Program` members.
+We have defined all `trait Program` members in terms of `trait Computation` members, function level `trait Product`
+members and function level `trait Sum` members.
 
 
 
