@@ -51,6 +51,8 @@ private[psbp] trait IfThenElse[
   private[psbp] trait Else[Z, Y]:
     def Else(`z>-f->y`: => Z >--> Y): Z >--> Y
 
+  // internal defined
+
   private[psbp] def ifThenElse[Z, Y](
       `z>-t->y`: => Z >--> Y,
       `z>-f->y`: => Z >--> Y
@@ -60,8 +62,6 @@ private[psbp] trait IfThenElse[
       then `y=>(y||z)`(`(z&&y)=>z`(`z&&b`))
       else `z=>(y||z)`(`(z&&y)=>z`(`z&&b`))
     }) >--> (`z>-t->y` || `z>-f->y`)
-
-  // internal defined
 
   extension [Z, Y](`z>-t->y`: => Z >--> Y)
     private[psbp] def OrElse(`z>-f->y`: => Z >--> Y): (Z && Boolean) >--> Y =
